@@ -25,11 +25,11 @@ app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use(cors({
     credentials: true,
-    origin: process.env.DIR_IMG,
+    origin:'http://localhost:5173',
     // origin: "'http://localhost:5173'"
 }));
 
-mongoose.connect(process.env.MONGO_URL);
+//mongoose.connect(process.env.MONGO_URL);
 
 app.listen(4000);
 
@@ -47,6 +47,7 @@ const getUserDataFromToken = (req) => {
 
 // ------------------------------- User API ---------------------------------------
 app.post("/api/register", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     const {name, email, password} = req.body;
     const type = "customer";
     
@@ -65,6 +66,7 @@ app.post("/api/register", async (req, res) => {
 });
 
 app.post("/api/login", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     const {name, password} = req.body;
     const userData = await User.findOne({name});
 
@@ -83,6 +85,7 @@ app.post("/api/login", async (req, res) => {
 });
 
 app.get("/api/profile", (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     const {token} = req.cookies;
     if (token) {
         jwt.verify(token, jwtSecret, {}, async (err, userData) => {
@@ -120,6 +123,7 @@ app.post("/upload-by-links", async (req, res) => {
 
 
 app.post("/api/product/create", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     const {title, detail, category, gender, store, keywords, price, sizes, colors, stock, photos} = req.body;
         
     try {
@@ -136,6 +140,7 @@ app.post("/api/product/create", async (req, res) => {
 });
 
 app.get("/api/search/:id", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     const {id} = req.params;
     try {
         const productData = await Product.findById(id).select("-__v");
@@ -146,6 +151,7 @@ app.get("/api/search/:id", async (req, res) => {
 });
 
 app.post("/api/search/keyword", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     const {keyword} = req.body;
     try {
         const productData = await Product.find({
@@ -175,6 +181,7 @@ app.post("/api/search/keyword", async (req, res) => {
 
 // -------------------------- Cart API ------------------------------
 app.post("/api/cart", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     const {id} = await getUserDataFromToken(req);
     const {productId, title, store, photo, gender, price, color, size, amount} = req.body;
     
@@ -201,6 +208,7 @@ app.post("/api/cart", async (req, res) => {
 });
 
 app.get("/api/cart", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     try {
         const {id} = await getUserDataFromToken(req);
         const cartData = await Cart.find({ownerId: id}).select("-__v");
@@ -210,6 +218,7 @@ app.get("/api/cart", async (req, res) => {
 })
 
 app.get("/api/cart/:id", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     const {id} = req.params;
     try {
         const cartData = await Cart.findById(id).select("-__v");
@@ -219,6 +228,7 @@ app.get("/api/cart/:id", async (req, res) => {
 })
 
 app.get("/api/cart/order/:orderId", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     try {
         const { orderId } = req.params;
         const cartData = await Cart.find({orderId}).select("-__v");
@@ -228,6 +238,7 @@ app.get("/api/cart/order/:orderId", async (req, res) => {
 })
 
 app.get("/api/cartSuccess", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     try {
         const {id} = await getUserDataFromToken(req);
         const cartData = await Cart.find({ownerId: id, checkout: true}).select("-__v");
@@ -237,6 +248,7 @@ app.get("/api/cartSuccess", async (req, res) => {
 })
 
 app.get("/api/cartWait", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     try {
         const {id} = await getUserDataFromToken(req);
         const cartData = await Cart.find({ownerId: id, checkout: false}).select("-__v");
@@ -247,6 +259,7 @@ app.get("/api/cartWait", async (req, res) => {
 
 
 app.delete("/api/cart/:id", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     const {id} = req.params;
     try {
         await Cart.deleteOne({_id: id});
@@ -257,6 +270,7 @@ app.delete("/api/cart/:id", async (req, res) => {
 });
 
 app.put("/api/cart/:id", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     const {id} = req.params;
     const {amount} = req.body;
 
@@ -277,6 +291,7 @@ app.put("/api/cart/:id", async (req, res) => {
 });
 
 app.put("/api/cart/checkout/:id", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     const {id} = req.params;
     const {orderId} = req.body;
 
@@ -298,6 +313,7 @@ app.put("/api/cart/checkout/:id", async (req, res) => {
 });
 
 app.put("/api/cart/review/:id", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     const {id} = req.params;
 
     try {
@@ -318,6 +334,7 @@ app.put("/api/cart/review/:id", async (req, res) => {
 
 // ----------------------- Order API --------------------------
 app.post("/api/order", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     const { firstname, lastname, phone,
             address1, address2,
             province, postcode,
@@ -340,6 +357,7 @@ app.post("/api/order", async (req, res) => {
 });
 
 app.get("/api/order", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     try {
         const {id} = await getUserDataFromToken(req);
         const orderData = await Order.find({ownerId: id}).select("-__v");
@@ -354,6 +372,7 @@ app.get("/api/order", async (req, res) => {
 
 // ----------------------- Review API --------------------------
 app.post("/api/review", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     const { cartId, productId,
             owner, rate, textReview, date } = req.body;
 
@@ -369,6 +388,7 @@ app.post("/api/review", async (req, res) => {
 });
 
 app.get("/api/review/product/:productId", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     const { productId } = req.params;
 
     try {
@@ -379,6 +399,7 @@ app.get("/api/review/product/:productId", async (req, res) => {
 });
 
 app.get("/api/review/user", async (req, res) => {
+    mongoose.connect(process.env.MONGO_URL);
     try {
         const { id } = await getUserDataFromToken(req);
         const reviews = await Review.find({ownerId: id});
