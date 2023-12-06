@@ -1,0 +1,557 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="text"].auth-input, input[type="password"].auth-input, input[type="email"].auth-input, input[type="number"].auth-input {
+    @apply py-2 px-3 rounded-md border border-gray-400 focus:outline-none focus:border-gray-900;
+}
+
+.auth-container {
+    @apply grow flex flex-col items-center bg-primary justify-center mb-80 mt-1 pb-5
+}
+
+button.primary {
+    @apply mt-5 p-2 bg-black text-white font-medium rounded-full focus:outline-none;
+}
+body.modal-open {
+    overflow: hidden;
+}
+/* ----------------------- swiper slider ----------------------*/
+button.home-info-1 {
+    @apply mt-5 py-3 px-5 bg-black text-white font-normal font-kanit text-lg rounded-full focus:outline-none hover:bg-neutral-800
+}
+.slider-btn {
+    @apply absolute top-0 z-10 h-full flex justify-center
+}
+.slider-img {
+    @apply absolute top-0 left-0 object-cover w-full
+}
+.slider-info {
+    @apply absolute h-full z-20 top-0 left-40 flex flex-col justify-center items-start text-white
+}
+.slider-info > h1 {
+    @apply pb-5 font-bold text-4xl drop-shadow-lg
+}
+.slider-info > h3 {
+    @apply font-semibold text-lg drop-shadow-md
+}
+.home .swiper-pagination-bullet {
+    @apply bg-white
+}
+.home .swiper-pagination-bullet-active {
+    @apply w-[10px] h-[10px]
+}
+/* --------------------- End swiper slider ---------------------*/
+
+button.home-info-2 {
+    @apply absolute bottom-12 left-12 px-4 py-3 bg-white font-normal rounded-full font-kanit hover:bg-neutral-300
+}
+
+.ex-keyword > a {
+    @apply p-4 bg-secondary rounded-md font-light font-kanit
+}
+
+/* ------------------------ Account Page -----------------------------*/
+
+.account .btn-account {
+    @apply py-3 px-8 bg-black text-white font-medium rounded-full
+}
+
+/* - - - - - - - - - - - - Order Subpage  - - - - - - - - - - - - - - - */
+.account .orders h2 {
+    @apply text-2xl font-medium
+}
+.products-order .container {
+    @apply grid grid-cols-7 gap-3 py-3 border-y col-span-1
+            max-2xl:grid-cols-6 max-xl:grid-cols-5
+}
+.products-order .container .detail {
+    @apply col-span-5 flex flex-col justify-between backdrop-blur-[2px]
+            bg-gradient-to-l from-white from-90% to-white/5
+            max-2xl:col-span-4 max-xl:col-span-3 max-lg:col-span-3
+
+}
+.account .products-order h1 {
+    @apply text-xl font-medium max-lg:text-lg
+}
+.account .products-order h2 {
+    @apply text-lg text-neutral-600 font-normal max-lg:text-base
+}
+.account .products-order button.review {
+    @apply px-5 py-2 rounded-full bg-neutral-200 max-lg:py-1 max-lg:text-sm
+}
+.account .products-order button.buy {
+    @apply px-5 py-2 rounded-full bg-stone-900 max-lg:py-1 max-lg:text-sm text-white
+}
+.account .orders a {
+    @apply rounded-full py-3 focus:outline-none w-max px-8 mt-7 bg-neutral-100 text-lg tracking-widest font-medium text-center
+}
+.account .orders .total {
+    @apply flex justify-between font-kanit font-medium text-xl
+}
+.account .orders span.ship-method {
+    @apply border rounded-full px-2 text-base align-middle font-normal
+}
+/* ------------------------- Admin Page ---------------------------*/
+
+.admin-add-product input[type="text"], .admin-add-product input[type="number"] {
+    @apply w-full border border-gray-400 rounded-[16px] py-2 px-2 my-1
+}
+
+/* ---------------------- Search Page ---------------------------- */
+
+.search .filter a, .search .filter h2 {
+    @apply text-xl max-md:text-lg max-sm:text-base font-medium
+}
+.search .filter h3 {
+    @apply text-lg cursor-pointer
+}
+.search .filter .title {
+    @apply flex flex-row justify-between pr-2 cursor-pointer
+}
+.search .filter .title:hover {
+    @apply flex flex-row justify-between pr-2 cursor-pointer text-stone-700
+}
+
+.search .filter .container-checkbox {
+    @apply flex flex-row items-center gap-2 cursor-pointer w-fit
+}
+.search .filter input[type="checkbox"].filter {
+    @apply appearance-none w-[18px] h-[18px] cursor-pointer border border-neutral-400
+}
+.search .filter input[type="checkbox"].filter:hover {
+    @apply outline outline-offset-[1px] outline-1 outline-gray-800
+}
+.search .filter input[type="checkbox"].filter:checked {
+    @apply bg-neutral-600 outline outline-offset-[1px] outline-1 outline-gray-800
+}
+
+.search .filter .container-checkbox-cs {
+    @apply flex-row flex-wrap gap-2 cursor-pointer w-full 
+}
+.search .filter input[type="checkbox"].color {
+    @apply appearance-none w-[44px] h-[44px] cursor-pointer border border-neutral-400
+}
+.search .filter input[type="checkbox"].color:hover {
+    @apply outline outline-offset-[2px] outline-2 outline-gray-800
+}
+.search .filter input[type="checkbox"].color:checked {
+    @apply outline outline-offset-[2px] outline-2 outline-gray-800 
+}
+
+.search .filter input[type="checkbox"].size {
+    @apply appearance-none w-[44px] h-[44px] cursor-pointer border border-neutral-400
+}
+.search .filter input[type="checkbox"].size:hover {
+    @apply outline outline-offset-[2px] outline-2 outline-gray-800
+}
+.search .filter input[type="checkbox"].size:checked {
+    @apply bg-stone-900 text-white outline outline-offset-[2px] outline-2 outline-gray-800 
+}
+
+
+
+
+/* ---------------------- Product Page ---------------------------*/
+.product-detail .images-slide .swiper-slide-thumb-active {
+    @apply outline outline-offset-[3px] outline-1 outline-gray-800
+}
+.product-detail .swiper-pagination-bullet-active {
+    @apply border border-gray-900
+}
+.product-detail .product-slide-btn {
+    @apply bg-white opacity-40 text-5xl
+}
+.product-detail .product-slide-btn:hover {
+    @apply bg-neutral-900 opacity-40 text-5xl text-white
+}
+.product-detail input[type="radio"] {
+    @apply h-[50px] w-[50px] appearance-none cursor-pointer flex justify-center before:mt-3
+}
+.product-detail input[type="radio"]:hover {
+    @apply outline outline-offset-[3px] outline-[3px]
+}
+.product-detail input[type="radio"].color:checked {
+    @apply outline outline-offset-[3px] outline-1
+}
+.product-detail input[type="radio"].size {
+    @apply border border-gray-400 bg-white text-black z-10 before:content-[attr(before)]
+}
+.product-detail input[type="radio"].size:checked {
+    @apply bg-stone-900 outline outline-offset-[3px] outline-1 text-white outline-stone-900
+}
+.product-detail input[type="radio"].size:disabled {
+    @apply bg-neutral-300 text-white cursor-not-allowed border-neutral-300
+}
+.product-detail .title {
+    @apply font-kanit drop-shadow tracking-tighter
+}
+.product-detail .choose {
+    @apply text-lg font-medium tracking-tighter
+}
+.product-detail button.add, div.add {
+    @apply w-full my-5 p-3 text-center font-medium cursor-pointer
+}
+.product-detail select, select:focus {
+    @apply border border-gray-400 py-2 pl-4 pr-10 rounded-[0px] outline-none
+}
+.product-detail .option {
+    @apply text-purple-800
+}
+
+/* -------------------------- Modal Cart ------------------------ */
+
+.cart .total {
+    @apply flex justify-between font-kanit font-medium text-xl
+}
+.cart .primBtn {
+    @apply rounded-full py-3 focus:outline-none w-full text-lg tracking-widest font-medium text-center
+}
+.cart .container-cart {
+    @apply h-4/5 flex flex-col justify-center items-center gap-3
+}
+
+/* -------------------------- Check out ------------------------ */
+.checkout .container {
+    @apply  h-[88vh] w-3/4 max-2xl:w-[86%] max-xl:w-full flex flex-row py-5 my-5 gap-16 max-2xl:gap-14 max-xl:gap-1
+            max-lg:flex-col max-lg:items-center max-lg:justify-start
+}
+.checkout .summary {
+    @apply w-2/5 mx-4 h-[90%] max-lg:w-3/5 border border-neutral-300 max-lg:w-3/4 max-lg:h-[100%] max-lg:mt-5 max-lg:mx-2 max-md:h-[85%] 
+}
+.checkout input[type="text"], input[type="tel"] {
+    @apply border px-4 py-3 w-full rounded-md
+}
+.checkout button {
+    @apply  rounded-full py-4 mt-4 px-2 focus:outline-none w-1/2 text-lg tracking-widest font-normal text-center
+            bg-black text-white max-2xl:w-3/5 max-xl:w-4/5 max-lg:w-3/5 max-sm:w-3/4
+}
+.checkout .total {
+    @apply flex justify-between font-kanit text-xl max-xl:text-lg
+}
+.checkout .ship-info {
+    @apply h-[8vh] w-full px-8 grid grid-cols-8 items-center border-t border-x border-neutral-300
+}
+.checkout .ship-info .label {
+    @apply text-lg font-medium text-neutral-500
+}
+.checkout .ship-info .detail {
+    @apply font-normal
+}
+.checkout .ship-info .edit {
+    @apply font-normal text-center underline underline-offset-2 cursor-pointer
+}
+.checkout input[type="radio"] {
+    @apply h-[16px] w-[16px] appearance-none bg-white rounded-full outline outline-offset-4 cursor-pointer
+}
+.checkout input[type="radio"]:checked {
+    @apply bg-black
+}
+.checkout .radio-label {
+    @apply pl-5 h-full w-full flex justify-between items-center cursor-pointer
+}
+.checkout .ship-method .detail {
+    @apply text-base font-normal text-neutral-400
+}
+.checkout span.ship-method {
+    @apply border rounded-full px-2 text-base align-middle font-normal
+}
+.checkout .choose-container {
+    @apply border flex items-center px-8 h-[9vh]
+}
+
+/* ------------------------- color ------------------------ */
+.black {
+    @apply bg-black
+}
+.white {
+    @apply bg-white border border-gray-400
+}
+.navy {
+    @apply bg-[#090068]
+}
+.accent-navy {
+    @apply accent-[#090068]
+}
+.pink {
+    @apply bg-[#FF7DC0]
+}
+.accent-pink {
+    @apply accent-[#FF7DC0]
+}
+.beige {
+    @apply bg-[#CAB599]
+}
+.accent-beige {
+    @apply accent-[#CAB599]
+}
+.brown {
+    @apply bg-[#6C3900]
+}
+.accent-brown {
+    @apply accent-[#6C3900]
+}
+.gray {
+    @apply bg-[#ADADAD]
+}
+.accent-gray {
+    @apply accent-[#ADADAD]
+}
+.blue {
+    @apply bg-[#575FFF]
+}
+.accent-blue {
+    @apply accent-[#575FFF]
+}
+.green {
+    @apply bg-[#1F9099]
+}
+.accent-green {
+    @apply accent-[#1F9099]
+}
+.scarlet {
+    @apply bg-[#AE3637]
+}
+.accent-scarlet {
+    @apply accent-[#AE3637]
+}
+.cyan {
+    @apply bg-[#22BBBA]
+}
+.accent-cyan {
+    @apply accent-[#22BBBA]
+}
+.lemon {
+    @apply bg-[#E0F443]
+}
+.accent-lemon {
+    @apply accent-[#E0F443]
+}
+.aqua {
+    @apply bg-[#4ED5D9]
+}
+.accent-aqua {
+    @apply accent-[#4ED5D9]
+}
+.orange {
+    @apply bg-[#FBB486]
+}
+.accent-orange {
+    @apply accent-[#FBB486]
+}
+.light-iron {
+    @apply bg-[#ADACA7] 
+}
+.accent-light-iron {
+    @apply accent-[#ADACA7]
+}
+.red {
+    @apply bg-[#731D21] 
+}
+.accent-red {
+    @apply accent-[#731D21]
+}
+.silver {
+    @apply bg-[#A5AAA3] 
+}
+.accent-silver {
+    @apply accent-[#A5AAA3]
+}
+.platinum {
+    @apply bg-[#ADB6B5]
+}
+.accent-platinum {
+    @apply accent-[#ADB6B5]
+}
+.yellow {
+    @apply bg-[#E4C259]
+}
+.accent-yellow {
+    @apply accent-[#E4C259]
+}
+.olive {
+    @apply bg-[#8B8B55]
+}
+.accent-olive {
+    @apply accent-[#8B8B55]
+}
+.light-blue {
+    @apply bg-[#C2DCE7]
+}
+.accent-light-blue {
+    @apply accent-[#C2DCE7]
+}
+.dark-blue {
+    @apply bg-[#212531]
+}
+.accent-dark-blue {
+    @apply accent-[#212531]
+}
+.dark-gray {
+    @apply bg-[#3E3D42]
+}
+.accent-dark-gray {
+    @apply accent-[#3E3D42]
+}
+.light-gray {
+    @apply bg-[#C9C9C9]
+}
+.accent-light-gray {
+    @apply accent-[#C9C9C9]
+}
+.wine {
+    @apply bg-[#722F37]
+}
+.accent-wine {
+    @apply accent-[#722F37]
+}
+.off-white {
+    @apply bg-[#FAF9F6] border border-gray-400
+}
+.accent-off-white {
+    @apply accent-[#FAF9F6]
+}
+.light-orange {
+    @apply bg-[#FFB38A]
+}
+.accent-light-orange {
+    @apply accent-[#FFB38A]
+}
+.natural {
+    @apply bg-[#E5D3BF]
+}
+.accent-natural {
+    @apply accent-[#E5D3BF]
+}
+.neutral {
+    @apply bg-[#EDEAEB]
+}
+.accent-neutural {
+    @apply accent-[#EDEAEB]
+}
+.dark-brown {
+    @apply bg-[#1B0000]
+}
+.accent-dark-brown {
+    @apply accent-[#1B0000]
+}
+.sail {
+    @apply bg-[#F6EBE5]
+}
+.accent-sail {
+    @apply accent-[#F6EBE5]
+}
+.coconut-milk {
+    @apply bg-[#F6EAD1]
+}
+.accent-coconut-milk {
+    @apply accent-[#F6EAD1]
+}
+.sea-glass {
+    @apply bg-[#D1E6E5]
+}
+.accent-sea-glass {
+    @apply accent-[#D1E6E5]
+}
+.light-silver {
+    @apply bg-[#D8D8D8]
+}
+.accent-light-silver {
+    @apply accent-[#D8D8D8]
+}
+.vanilla {
+    @apply bg-[#F3E5AB]
+}
+.accent-vanilla {
+    @apply accent-[#F3E5AB]
+}
+.khaki {
+    @apply bg-[#F0E68C]
+}
+.accent-khaki {
+    @apply accent-[#F0E68C]
+}
+.diffused-blue {
+    @apply bg-[#0F3043]
+}
+.accent-diffused-blue {
+    @apply accent-[#0F3043]
+}
+.platinum-violet {
+    @apply bg-[#9206F8]
+}
+.accent-platinum-violet {
+    @apply accent-[#9206F8]
+}
+.metallic-red {
+    @apply bg-[#A62C2B]
+}
+.accent-metallic-red {
+    @apply accent-[#A62C2B]
+}
+.bronze {
+    @apply bg-[#B08D57]
+}
+.accent-bronze {
+    @apply accent-[#B08D57]
+}
+.dark-purple {
+    @apply bg-[#301934]
+}
+.accent-dark-purple {
+    @apply accent-[#301934]
+}
+.purple {
+    @apply bg-[#6F00FF]
+}
+.accent-purple {
+    @apply accent-[#6F00FF]
+}
+.light-purple {
+    @apply bg-[#EBE8FC]
+}
+.accent-light-purple {
+    @apply accent-[#EBE8FC]
+}
+.arctic-night {
+    @apply bg-[#2D4759]
+}
+.accent-arctic-night {
+    @apply accent-[#2D4759]
+}
+.gold {
+    @apply bg-[#FFD700]
+}
+.accent-gold {
+    @apply accent-[#FFD700]
+}
+.dark-green {
+    @apply bg-[#092B1A]
+}
+.accent-dark-green {
+    @apply accent-[#092B1A]
+}
+.light-green {
+    @apply bg-[#94FFD4]
+}
+.accent-light-green {
+    @apply accent-[#94FFD4]
+}
+.mustard {
+    @apply bg-[#E1AD01]
+}
+.accent-mustard {
+    @apply accent-[#E1AD01]
+}
+.apricot {
+    @apply bg-[#FBCEB1]
+}
+.accent-apricot {
+    @apply accent-[#FBCEB1]
+}
+.light-brown {
+    @apply bg-[#B5651D]
+}
+.accent-light-brown {
+    @apply accent-[#B5651D]
+}
