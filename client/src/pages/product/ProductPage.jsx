@@ -8,7 +8,7 @@ import { useRef } from 'react';
 
 import axios from "axios";
 
-import { CartModal, Star, ReviewCard } from "../../components/";
+import { CartModal, Star, ReviewCard, Image } from "../../components/";
 
 export default function ProductPage () {
     const prevRef = useRef(null);
@@ -118,7 +118,7 @@ export default function ProductPage () {
                                 >
                                     {photos.map((photo, i) => (
                                         <SwiperSlide className="px-1 w-full aspect-square overflow-hidden flex justify-center items-center cursor-pointer" key={`${i}${i}i${photo}`}>
-                                            <img className="object-cover" src={`http://localhost:4000/uploads/${photo}`} alt="img-pr"/>
+                                            <Image className="object-cover" src={photo} alt="img-pr"/>
                                         </SwiperSlide>
                                     ))}
                                 </Swiper>
@@ -137,7 +137,7 @@ export default function ProductPage () {
                                     {photos.map((photo, i) => (
                                         <SwiperSlide className="w-full" key={`${photo}${i*i}${i}`}>
                                             <div className="h-full ">
-                                                <img className="object-cover" src={`http://localhost:4000/uploads/${photo}`} alt="img-pr"/>
+                                                <Image className="object-cover" src={photo} alt="img-pr"/>
                                             </div>
                                         </SwiperSlide>
                                     ))}

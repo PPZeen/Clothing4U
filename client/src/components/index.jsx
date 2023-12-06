@@ -4,6 +4,7 @@ import ProductCard from "./ProductCard";
 import ReviewModal from "./ReviewModal";
 import ReviewCard from "./ReviewCard";
 import Star from "./Star";
+import Image from "./Image";
 
 export {
     CartModal,
@@ -11,5 +12,6 @@ export {
     ProductCard,
     ReviewModal,
     ReviewCard,
-    Star
+    Star,
+    Image
 };

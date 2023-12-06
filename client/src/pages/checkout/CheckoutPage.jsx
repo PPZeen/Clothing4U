@@ -226,7 +226,7 @@ export default function CheckoutPage() {
                             {cartData.map(cart => (
                                 <div className="h-[27%] border-b grid grid-cols-4" key={`${cart._id}`}>
                                     <div className="py-2">
-                                        <img className="h-full aspect-square object-cover" src={`http://localhost:4000/uploads/${cart.photo}`}/>
+                                        <Image className="h-full aspect-square object-cover" src={cart.photo}/>
                                     </div>
                                     <div className="h-full ml-2 py-2 col-span-2 font-kanit tracking-tighter leading-tight drop-shadow-sm overflow-hidden">
                                         <h1>{cart.title}</h1>

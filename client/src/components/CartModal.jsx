@@ -3,6 +3,7 @@ import {useSpring, animated} from "react-spring";
 import { UserContext } from "../context/UserContext";
 
 import axios from "axios";
+import Image from "./Image";
 
 export default function CartModal ({showCart, setShowCart}) {
     
@@ -120,7 +121,7 @@ export default function CartModal ({showCart, setShowCart}) {
                                         {cartData.map(cart => (
                                             <div className="my-1 grid grid-cols-4 h-[29%] gap-1 border-b pb-2" key={cart._id}>
                                                 <div className="py-2">
-                                                    <img className="h-full aspect-square object-cover" src={`http://localhost:4000/uploads/${cart.photo}`}/>
+                                                    <Image className="h-full aspect-square object-cover" src={cart.photo}/>
                                                 </div>
                                                 <div className="h-full ml-2 py-2 col-span-2 flex flex-col justify-between font-kanit tracking-tighter leading-tight drop-shadow-sm overflow-hidden">
                                                     <div>

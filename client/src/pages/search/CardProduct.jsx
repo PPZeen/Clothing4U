@@ -1,3 +1,5 @@
+import { Image } from "../../components";
+
 export default function CardProduct ({product, search}) {
     return (
         <button className="w-[32%] max-lg:w-[48%] max-sm:w-[98%] aspect-[9/14] flex flex-col justify-between"
@@ -6,7 +8,7 @@ export default function CardProduct ({product, search}) {
         >
             <div>
                 <div className="aspect-square w-full overflow-hidden flex justify-center items-center">
-                    <img className="object-cover" src={`http://localhost:4000/uploads/${product.photos[0]}`}/>
+                    <Image className="object-cover" src={product.photos[0]}/>
                 </div>
                 <div className="flex flex-row justify-between py-3 my-1">
                     <div className="flex flex-row gap-2">

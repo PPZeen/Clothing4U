@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { createSearchParams, useNavigate } from "react-router-dom";
 
+import Image from "./Image";
+
 export default function ProductCard ({cart, openReview, review}) {
     
     const navigate = useNavigate();
@@ -15,7 +17,7 @@ export default function ProductCard ({cart, openReview, review}) {
     return (
         <div className="container">
             <div className="aspect-square w-full overflow-hidden flex justify-center items-center">
-                <img className="object-cover" src={`http://localhost:4000/uploads/${cart.photo}`}/>
+                <Image className="object-cover" src={cart.photo}/>
             </div>
             <div className="detail">
                 <div>
