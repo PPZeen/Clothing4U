@@ -16,10 +16,10 @@ export default function ProductCard ({cart, openReview, review}) {
     }
     return (
         <div className="container">
-            <div className="aspect-square w-full overflow-hidden flex justify-center items-center">
-                <Image className="object-cover" src={cart.photo}/>
+            <div className="aspect-square h-full overflow-hidden flex justify-center items-center">
+                <Image className="object-cover h-full" src={cart.photo}/>
             </div>
-            <div className="detail">
+            <div className="detail pl-4">
                 <div>
                     <h1>{cart.title}</h1>
                     <h2>size: {cart.gender} {cart.size.toUpperCase()}</h2>

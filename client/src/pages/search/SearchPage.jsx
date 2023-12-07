@@ -162,8 +162,8 @@ export default function SearchPage () {
                 <div className="w-5/6 max-lg:w-[90%]">
                     <div className="pt-10 pb-5 mb-5 border-b border-neutral-400">
                         <div className="flex justify-between text-xl font-semibold text-neutral-600">
-                            <h3>SEARCH RESULTS FOR</h3>
-                            <h3 className="text-lg font-medium text-neutral-400">{filProducts.length} items</h3>
+                            <h3 className="max-md:text-base max-sm:text-sm">SEARCH RESULTS FOR</h3>
+                            <h3 className="text-lg max-md:text-base max-sm:text-sm font-medium text-neutral-400">{filProducts.length} items</h3>
                         </div>
                         <div className="flex justify-between mt-2">
                             <h1 className="text-3xl font-semibold"> {keyword}</h1>

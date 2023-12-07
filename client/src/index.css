@@ -18,7 +18,8 @@ body.modal-open {
 }
 /* ----------------------- swiper slider ----------------------*/
 button.home-info-1 {
-    @apply mt-5 py-3 px-5 bg-black text-white font-normal font-kanit text-lg rounded-full focus:outline-none hover:bg-neutral-800
+    @apply mt-5 py-3 px-5 max-md:py-2 bg-black text-white font-normal font-kanit text-lg max-md:text-base max-sm:text-xs
+           rounded-full focus:outline-none hover:bg-neutral-800
 }
 .slider-btn {
     @apply absolute top-0 z-10 h-full flex justify-center
@@ -27,13 +28,13 @@ button.home-info-1 {
     @apply absolute top-0 left-0 object-cover w-full
 }
 .slider-info {
-    @apply absolute h-full z-20 top-0 left-40 flex flex-col justify-center items-start text-white
+    @apply absolute h-full z-20 top-0 left-40 flex flex-col justify-center items-start text-white max-lg:left-28 max-md:left-20 max-sm:left-14
 }
 .slider-info > h1 {
-    @apply pb-5 font-bold text-4xl drop-shadow-lg
+    @apply pb-5 max-lg:pb-3 max-md:pb-1 max-sm:pb-0 font-bold drop-shadow-lg text-4xl max-md:text-2xl max-sm:text-lg
 }
 .slider-info > h3 {
-    @apply font-semibold text-lg drop-shadow-md
+    @apply font-semibold drop-shadow-md text-lg max-lg:text-base max-md:text-sm max-sm:text-xs max-sm:w-[95%]
 }
 .home .swiper-pagination-bullet {
     @apply bg-white
@@ -44,22 +45,29 @@ button.home-info-1 {
 /* --------------------- End swiper slider ---------------------*/
 
 button.home-info-2 {
-    @apply absolute bottom-12 left-12 px-4 py-3 bg-white font-normal rounded-full font-kanit hover:bg-neutral-300
+    @apply absolute bottom-12 left-12 max-md:bottom-6 max-md:left-6 max-sm:bottom-2 max-sm:left-2 max-sm:px-3
+           px-4 py-3 max-md:py-2 bg-white font-normal rounded-full font-kanit hover:bg-neutral-300 max-sm:text-xs
 }
 
 .ex-keyword > a {
-    @apply p-4 bg-secondary rounded-md font-light font-kanit
+    @apply p-4 bg-secondary rounded-md font-light font-kanit max-lg:p-3 max-xl:py-3 max-md:py-2
 }
 
 /* ------------------------ Account Page -----------------------------*/
 
 .account .btn-account {
-    @apply py-3 px-8 bg-black text-white font-medium rounded-full
+    @apply py-3 px-8 max-md:px-4 bg-black text-white font-medium rounded-full flex justify-center
 }
 
 /* - - - - - - - - - - - - Order Subpage  - - - - - - - - - - - - - - - */
 .account .orders h2 {
-    @apply text-2xl font-medium
+    @apply text-2xl font-medium max-lg:text-xl max-md:text-lg max-sm:text-base
+}
+.account .orders h3 {
+    @apply text-xl max-lg:text-lg max-md:text-base max-sm:text-xs text-neutral-600 pl-8 
+}
+.account .orders h5 {
+    @apply text-xl max-lg:text-lg max-md:text-base max-sm:text-xs text-neutral-600
 }
 .products-order .container {
     @apply grid grid-cols-7 gap-3 py-3 border-y col-span-1
@@ -71,26 +79,30 @@ button.home-info-2 {
             max-2xl:col-span-4 max-xl:col-span-3 max-lg:col-span-3
 
 }
+.total h1 {
+    @apply text-xl font-medium max-lg:text-lg max-md:text-base max-sm:text-sm
+}
+
 .account .products-order h1 {
-    @apply text-xl font-medium max-lg:text-lg
+    @apply text-xl font-medium max-lg:text-lg max-md:text-base max-sm:text-sm
 }
 .account .products-order h2 {
-    @apply text-lg text-neutral-600 font-normal max-lg:text-base
+    @apply text-lg text-neutral-600 font-normal max-lg:text-base max-md:text-sm
 }
 .account .products-order button.review {
-    @apply px-5 py-2 rounded-full bg-neutral-200 max-lg:py-1 max-lg:text-sm
+    @apply px-5 py-2 rounded-full bg-neutral-200 max-lg:py-1 max-lg:text-sm max-md:text-xs
 }
 .account .products-order button.buy {
-    @apply px-5 py-2 rounded-full bg-stone-900 max-lg:py-1 max-lg:text-sm text-white
+    @apply px-5 py-2 rounded-full bg-stone-900 max-lg:py-1 max-lg:text-sm max-md:text-xs text-white
 }
 .account .orders a {
-    @apply rounded-full py-3 focus:outline-none w-max px-8 mt-7 bg-neutral-100 text-lg tracking-widest font-medium text-center
+    @apply rounded-full py-3 focus:outline-none w-max px-8 mt-7 bg-neutral-100 text-lg max-md:text-lg tracking-widest font-medium text-center
 }
 .account .orders .total {
     @apply flex justify-between font-kanit font-medium text-xl
 }
 .account .orders span.ship-method {
-    @apply border rounded-full px-2 text-base align-middle font-normal
+    @apply border rounded-full px-2 text-base align-middle font-normal max-md:text-xs
 }
 /* ------------------------- Admin Page ---------------------------*/
 
@@ -202,10 +214,10 @@ button.home-info-2 {
 /* -------------------------- Modal Cart ------------------------ */
 
 .cart .total {
-    @apply flex justify-between font-kanit font-medium text-xl
+    @apply flex justify-between font-kanit font-medium text-xl max-md:text-lg
 }
 .cart .primBtn {
-    @apply rounded-full py-3 focus:outline-none w-full text-lg tracking-widest font-medium text-center
+    @apply rounded-full py-3 focus:outline-none w-full text-lg max-md:text-base tracking-widest font-medium text-center
 }
 .cart .container-cart {
     @apply h-4/5 flex flex-col justify-center items-center gap-3
@@ -217,7 +229,7 @@ button.home-info-2 {
             max-lg:flex-col max-lg:items-center max-lg:justify-start
 }
 .checkout .summary {
-    @apply w-2/5 mx-4 h-[90%] max-lg:w-3/5 border border-neutral-300 max-lg:w-3/4 max-lg:h-[100%] max-lg:mt-5 max-lg:mx-2 max-md:h-[85%] 
+    @apply w-2/5 mx-2 h-[90%] max-lg:w-4/5 max-md:w-[95%] border border-neutral-300 max-lg:h-[100%] max-lg:mt-5 max-lg:mx-2 max-md:h-[85%] 
 }
 .checkout input[type="text"], input[type="tel"] {
     @apply border px-4 py-3 w-full rounded-md
@@ -233,16 +245,16 @@ button.home-info-2 {
     @apply h-[8vh] w-full px-8 grid grid-cols-8 items-center border-t border-x border-neutral-300
 }
 .checkout .ship-info .label {
-    @apply text-lg font-medium text-neutral-500
+    @apply text-lg max-md:text-sm font-medium text-neutral-500
 }
 .checkout .ship-info .detail {
     @apply font-normal
 }
 .checkout .ship-info .edit {
-    @apply font-normal text-center underline underline-offset-2 cursor-pointer
+    @apply font-normal text-center underline underline-offset-2 cursor-pointer max-md:text-sm
 }
 .checkout input[type="radio"] {
-    @apply h-[16px] w-[16px] appearance-none bg-white rounded-full outline outline-offset-4 cursor-pointer
+    @apply h-[16px] aspect-square max-md:h-[10px] max-sm:h-[7px] appearance-none bg-white rounded-full outline outline-offset-4 cursor-pointer
 }
 .checkout input[type="radio"]:checked {
     @apply bg-black
@@ -257,7 +269,7 @@ button.home-info-2 {
     @apply border rounded-full px-2 text-base align-middle font-normal
 }
 .checkout .choose-container {
-    @apply border flex items-center px-8 h-[9vh]
+    @apply border flex items-center px-8 max-md:px-4 h-[9vh]
 }
 
 /* ------------------------- color ------------------------ */

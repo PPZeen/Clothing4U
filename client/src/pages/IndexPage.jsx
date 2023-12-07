@@ -80,34 +80,34 @@ export default function IndexPage() {
 
                 <div className="slider-btn left-0">
                     <button ref={prevRef}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-16 h-16 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="aspect-square w-16 max-md:w-10 text-white">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                         </svg>
                     </button>
                 </div>
                 <div className="slider-btn right-4">
                     <button ref={nextRef}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-16 h-16 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="aspect-square w-16 max-md:w-10 text-white">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
                     </button>
                 </div>
             </Swiper>
-            <div className="mt-20 mb-6 text-center">
-                <h1 className="pb-4 text-5xl font-bold"> Anime Collaboration Collection </h1>
-                <h2 className="pb-4 text-xl font-kanit">พบกับการดีไซน์การตัวละครที่คุณรัก</h2>
+            <div className="mt-20 max-xl:mt-15 max-md:mt-10 max-sm:mt-6 mb-6 max-md:mb-2 w-full flex flex-col justify-center items-center text-center">
+                <h1 className="pb-4 max-md:pb-2 w-[70%] max-md:w-[90%] text-5xl max-xl:text-3xl max-md:text-xl font-bold"> Anime Collaboration Collection </h1>
+                <h2 className="pb-4 max-md:pb-2 text-xl max-xl:text-lg max-md:text-base max-sm:text-xs font-kanit">พบกับการดีไซน์การตัวละครที่คุณรัก</h2>
             </div>
             <div className="w-full flex justify-center h-[33vw] aspect-[8/3] overflow-hidden">
                 <img className="object-cover h-full" src={h5}/>
             </div>
-            <div className="text-center mt-8">
-                <h1 className="text-3xl font-semibold font-kanit">เป็นเจ้าของก่อนใคร ซื้อก่อนเท่ก่อน</h1>
-                <h1 className="text-lg font-normal">jujutsu kaisen collection</h1>
+            <div className="text-center mt-8 max-md:mt-4">
+                <h1 className="text-3xl max-xl:text-2xl max-md:text-xl font-semibold font-kanit">เป็นเจ้าของก่อนใคร ซื้อก่อนเท่ก่อน</h1>
+                <h1 className="text-lg max-md:text-base max-sm:text-xs font-normal">jujutsu kaisen collection</h1>
                 <button className="home-info-1" onClick={() => search("jjk")}>ช็อปเลย</button>
             </div>
             
-            <div className="mt-5">
-                <h1 className="font-kanit text-3xl py-5">สินค้าพื้นฐาน</h1>
+            <div className="mt-5 max-md:mt-1">
+                <h1 className="font-kanit py-5 max-md:py-2 text-3xl max-md:text-xl max-sm:text-lg">สินค้าพื้นฐาน</h1>
                 <div className="grid grid-cols-3 gap-4 h-[36.5vw] aspect-[8/3] overflow-hidden">
                     <div className="relative">
                         <img className="object-cover h-full" src={h6}/>

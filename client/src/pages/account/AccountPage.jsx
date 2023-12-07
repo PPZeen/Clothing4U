@@ -43,7 +43,7 @@ export default function AccountPage() {
 
     return (
         <div className="account relative">
-            <nav className="w-full mt-5 mb-5 flex justify-center gap-8">
+            <nav className="w-full mt-5 mb-5 flex justify-center gap-8 max-md:gap-4 flex-wrap">
                 <Link className={linkCalasses("profile")} to={"/account"}>
                     <i className="uil uil-user pr-2"></i>
                     My Profile

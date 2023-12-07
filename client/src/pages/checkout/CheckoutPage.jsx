@@ -5,6 +5,7 @@ import { Navigate } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
 
+import { Image } from "../../components";
 import { InfoSubpage, ShipInfoSubpage, ShipPickSubpage } from "./";
 
 export default function CheckoutPage() {
@@ -107,8 +108,8 @@ export default function CheckoutPage() {
         <div className="relative checkout w-full h-[90vh] flex justify-center font-kanit">
             <div className="container">
                 
-                <div className="w-3/5 px-2 h-full max-lg:w-full">
-                    <div className="flex flex-row gap-3 text-lg font-normal">
+                <div className="w-3/5 px-2 h-full max-lg:w-full ">
+                    <div className="flex flex-row gap-3 text-lg max-md:text-sm font-normal">
                         <div className="cursor-pointer" onClick={editInfo}>
                             <i className="uil uil-clipboard mr-1"></i>
                             Information
@@ -219,33 +220,36 @@ export default function CheckoutPage() {
                     )}
 
                 </div>
+                {info && shipping && (
+                    <div className="mt-8 content-none"></div>
+                )}
 
                 <div className="summary">
                     <div className="h-3/4">
-                        <div className="h-full my-5 mx-7 overflow-y-scroll overflow-x-hidden">
+                        <div className="h-full my-5 mx-7 flex flex-col overflow-y-scroll overflow-x-hidden">
                             {cartData.map(cart => (
-                                <div className="h-[27%] border-b grid grid-cols-4" key={`${cart._id}`}>
+                                <div className="border-b grid grid-cols-4" key={`${cart._id}`}>
                                     <div className="py-2">
                                         <Image className="h-full aspect-square object-cover" src={cart.photo}/>
                                     </div>
                                     <div className="h-full ml-2 py-2 col-span-2 font-kanit tracking-tighter leading-tight drop-shadow-sm overflow-hidden">
                                         <h1>{cart.title}</h1>
-                                        <h2 className="font-light text-neutral-400 leading-tight">size: {cart.gender} {cart.size.toUpperCase()}</h2>
-                                        <h2 className="font-light text-neutral-400 leading-none">color: {cart.color}</h2>
+                                        <h2 className="font-light text-neutral-400 leading-tight max-md:text-sm">size: {cart.gender} {cart.size.toUpperCase()}</h2>
+                                        <h2 className="font-light text-neutral-400 leading-none max-md:text-sm">color: {cart.color}</h2>
                                     </div>
-                                    <div className="flex flex-col justify-between items-end mt-1 mr-2">
-                                        <h1 className="text-neutral-400">{cart.store.toUpperCase()}</h1>
+                                    <div className="flex flex-col justify-between items-end mt-1 mr-2 max-md:my-2">
+                                        <h1 className="text-neutral-400 max-md:text-sm">{cart.store.toUpperCase()}</h1>
                                         <div className="text-end">
-                                            <p className="text-neutral-400">x{cart.amount}</p>
-                                            <h1 className="font-medium text-xl max-2xl:text-lg">THB {cart.price}</h1>
+                                            <p className="text-neutral-400 max-md:text-sm">x{cart.amount}</p>
+                                            <h1 className="font-medium text-xl max-2xl:text-lg max-xl:text-base max-md:text-sm">THB {cart.price}</h1>
                                         </div>
                                     </div>
                                 </div>
                             ))}
                         </div>
                     </div>
-                    <div className="h-1/4 py-4 mx-7 border-t">
-                        <div className="flex flex-col h-full gap-1 justify-end pb-5">
+                    <div className="h-1/4 py-4 mx-7 border-t max-md:border-none">
+                        <div className="flex flex-col h-full gap-1 justify-end py-5">
                             <div className="total font-normal">
                                 <h1>Subtotal</h1>
                                 <div>THB {total}</div>
@@ -254,7 +258,7 @@ export default function CheckoutPage() {
                                 <h1>Shipping Method</h1>
                                 <div className="total font-normal gap-2">
                                     { shipmethod == "Standard Shipping" ? (<>
-                                        <span className="ship-method border-emerald-500 text-emerald-500">Free Shipping</span>
+                                        <span className="ship-method border-emerald-500 text-emerald-500 text-center">Free Shipping</span>
                                         <h1>THB 0</h1>
                                     </>): (<>
                                         <span className="ship-method border-rose-500 text-rose-500">DHL Delivery</span>

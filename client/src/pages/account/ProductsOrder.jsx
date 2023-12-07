@@ -76,9 +76,9 @@ export default function ProductsOrder ({orderId}) {
                             <ProductCard key={cart._id} cart={cart} openReview={openReview} review={false} />
                         ))}
                     </div>
-                    <div id="showmore" className="cursor-pointer text-center text-neutral-400" onClick={showMore}>
+                    <h5 id="showmore" className="cursor-pointer text-center text-neutral-400" onClick={showMore}>
                         {show}
-                    </div>
+                    </h5>
                 </>)}
             </>)}
             {showReview && (

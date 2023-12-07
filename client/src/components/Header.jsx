@@ -59,34 +59,34 @@ export default function Header() {
 
     return (
         <div className="sticky top-0 z-30">
-            <header className="flex justify-between items-center p-2 px-24 max-lg:px-10 bg-primary">
+            <header className="flex justify-between items-center p-2 px-24 max-lg:px-10 max-md:px-5 bg-primary">
                 <a href="/">
                     <img className="h-12 max-md:hidden" src={Logo} alt="Logo"></img>
-                    <img className="h-12 hidden max-md:block" src={LogoSmall} alt="Logo"></img>
+                    <img className="h-12 hidden max-md:block max-sm:h-8" src={LogoSmall} alt="Logo"></img>
                 </a>
-                <div className="flex flex-row gap-5 font-medium">
-                    <a href="/search?keyword=" >ALL</a>
-                    <a href="/search?keyword=male" >MEN</a>
-                    <a href="/search?keyword=female" >WOMEN</a>
-                    <a href="/search?keyword=unisex" >UNISEX</a>
-                    <a href="/search?keyword=kids" >KIDS</a>
+                <div className="flex flex-row gap-5 font-medium max-md:text-sm max-md:gap-3 max-md:pr-4">
+                    <a href="/search?keyword=" className="max-sm:hidden">ALL</a>
+                    <a href="/search?keyword=male" className="max-[350px]:hidden" >MEN</a>
+                    <a href="/search?keyword=female" className="max-[430px]:hidden" >WOMEN</a>
+                    <a href="/search?keyword=unisex" className="max-[300px]:hidden">UNISEX</a>
+                    <a href="/search?keyword=kids" className="max-[300px]:hidden">KIDS</a>
                 </div>
-                <div className="flex flex-row gap-5">
+                <div className="flex flex-row gap-5 max-md:gap-2">
                     <button onClick={() => {find ? setFind(false) : setFind(true)}}>
-                        <i className="uil uil-search text-3xl"></i>
+                        <i className="uil uil-search text-3xl max-lg:text-2xl max-md:text-xl"></i>
                     </button>
 
                     <button className="relative" onClick={openCart}>
                         {items && (
                             <div className="absolute top-0 right-0 h-[10px] w-[10px] rounded-full bg-red-500 text-white text-center text-xs"></div>
                         )}
-                        <i className="uil uil-shopping-cart text-3xl"></i>
+                        <i className="uil uil-shopping-cart text-3xl max-lg:text-2xl max-md:text-xl"></i>
                     </button>
 
-                    <a href={user ? "/account" :"/login"} className="flex flex-row items-center gap-2">
-                        <i className="uil uil-user text-3xl"></i>
+                    <a href={user ? "/account" :"/login"} className="flex flex-row items-center gap-2 max-md:gap-0">
+                        <i className="uil uil-user text-3xl max-lg:text-2xl max-md:text-xl"></i>
                         {!!user && (
-                            <div className="ml-2 font-semibold text-xl">{user.name}</div>
+                            <div className="ml-2 font-semibold text-xl max-lg:text-lg max-md:text-sm">{user.name}</div>
                         )}
                     </a>
                 </div>
@@ -96,7 +96,7 @@ export default function Header() {
             { find === true ?
                 <div className="p-5 mt-1 bg-primary">
                     <div className="flex flex-col py-3 items-center gap-4">
-                        <form className="flex flex-row py-2 px-3 w-3/5 gap-5 bg-white rounded-md shadow-md shodow-gray-600 border border-gray-400" onSubmit={search}>
+                        <form className="flex flex-row py-2 px-3 w-3/5 max-lg:w-3/4 max-md:py-1 gap-5 bg-white rounded-md shadow-md shodow-gray-600 border border-gray-400" onSubmit={search}>
                             <a href={`/search?keyword=${keyword}`} type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8 text-gray-400">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
@@ -105,7 +105,7 @@ export default function Header() {
                             <input className="w-full focus:outline-none" type="text" placeholder="Search by keywords..." onChange={e => setKeyword(e.target.value)} required></input>
                         </form>
             
-                        <div className="ex-keyword flex flex-wrap gap-3 justify-center w-1/2">
+                        <div className="ex-keyword flex flex-wrap gap-3 justify-center w-1/2 max-md:w-[60%] max-sm:hidden">
                             <a href="/search?keyword=เสื้อยืด" >เสื้อยืด</a>
                             <a href="/search?keyword=เสื้อฮู้ด" >เสื้อฮู้ด</a>
                             <a href="/search?keyword=เสื้อโปโล" >เสื้อโปโล</a>

@@ -93,16 +93,16 @@ export default function ProductPage () {
 
     return (
         <div className="w-full h-screen relative">
-            <div className="flex justify-center">
-                <div className="w-4/5">
-                    <button onClick={() => history.back()} className="ml-1 mt-6">
+            <div className="flex flex-col justify-center items-center">
+                <div className="w-4/5 max-md:w-full max-md:px-8">
+                    <button onClick={() => history.back()} className="ml-12 mt-6 max-md:ml-0">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-10 h-10">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
                         </svg>
                     </button>
-                    <div className="product-detail flex flex-row mb-8 mt-2">
+                    <div className="product-detail flex flex-row max-md:flex-col mb-8 mt-2">
                         <div className="h-3/4 w-10/16">
-                            <div className="flex justify-center gap-16">
+                            <div className="flex justify-center">
                                 <Swiper
                                     modules={[FreeMode, Navigation, Thumbs]}
                                     onSwiper={setThumbsSwiper}
@@ -114,10 +114,10 @@ export default function ProductPage () {
                                         delay: 1000,
                                         disableOnInteraction: false,
                                     }}
-                                    className="images-slide w-[5.2vw] p-1"
+                                    className="images-slide w-[5.6vw] max-2xl:w-[6vw] max-xl:w-[6.5vw] max-lg:w-[6.2vw] max-md:w-[14%] p-1"
                                 >
                                     {photos.map((photo, i) => (
-                                        <SwiperSlide className="px-1 w-full aspect-square overflow-hidden flex justify-center items-center cursor-pointer" key={`${i}${i}i${photo}`}>
+                                        <SwiperSlide className="px-1 w-full overflow-hidden flex cursor-pointer flex items-center justify-end" key={`${i}${i}i${photo}`}>
                                             <Image className="object-cover" src={photo} alt="img-pr"/>
                                         </SwiperSlide>
                                     ))}
@@ -132,13 +132,11 @@ export default function ProductPage () {
                                     }}
                                     loop={true}
                                     thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null}}
-                                    className="relative img w-[34vw] aspect-[8/9]"
+                                    className="relative img w-[34vw] aspect-[8/9] max-md:w-[75%]"
                                 >
                                     {photos.map((photo, i) => (
                                         <SwiperSlide className="w-full" key={`${photo}${i*i}${i}`}>
-                                            <div className="h-full ">
-                                                <Image className="object-cover" src={photo} alt="img-pr"/>
-                                            </div>
+                                            <Image className="object-cover h-full" src={photo} alt="img-pr"/>
                                         </SwiperSlide>
                                     ))}
                                     <div className="slider-btn left-0 items-center">
@@ -154,14 +152,14 @@ export default function ProductPage () {
                                 </Swiper>
                             </div>
                             {rate > 0 && (<>
-                                <div className="mt-8 py-3 border-y border-neutral-400">
+                                <div className="mt-8 max-md:hidden py-3 border-y border-neutral-400">
                                     <div className="flex items-center gap-4">
                                         <h1 className="font-medium text-xl">Review</h1>
                                         <Star rate={rate} kId={`${id}-1`} />
                                         <p>({rate})</p>
                                     </div>
                                 </div>
-                                <div>
+                                <div className="max-md:hidden">
                                     {reviews.map(review => (
                                         <ReviewCard
                                             key={`${review._id$}-review`}
@@ -175,10 +173,10 @@ export default function ProductPage () {
                                 </div>
                             </>)}
                         </div>
-                        <div className="ml-28 w-6/16 font-kanit">
-                            <h1 className="title font-medium text-5xl">{products.title}</h1>
+                        <div className="ml-28 max-xl:ml-18 max-lg:ml-14 max-md:ml-0 w-6/16 font-kanit max-md:mt-5">
+                            <h1 className="title font-medium text-5xl max-lg:text-4xl max-sm:text-3xl">{products.title}</h1>
                             <div className="flex justify-between items-center">
-                                <h2 className="mt-3 title font-semibold text-4xl"> THB {products.price}</h2>
+                                <h2 className="mt-3 title font-semibold text-4xl max-lg:text-3xl max-sm:text-2xl"> THB {products.price}</h2>
                                 {rate > 0 && (
                                     <div className="flex items-center gap-2">
                                         <Star rate={rate} kId={`${id}-2`} />
@@ -237,6 +235,27 @@ export default function ProductPage () {
                             </form>
                         </div>
                     </div>
+                    {rate > 0 && (<>
+                        <div className="hidden max-md:block pb-3 border-b border-neutral-400">
+                            <div className="flex items-center gap-4">
+                                <h1 className="font-medium text-xl">Review</h1>
+                                <Star rate={rate} kId={`${id}-1`} />
+                                <p>({rate})</p>
+                            </div>
+                        </div>
+                        <div className="hidden max-md:block">
+                            {reviews.map(review => (
+                                <ReviewCard
+                                    key={`${review._id$}-review`}
+                                    cartId={review.cartId}
+                                    owner={review.owner}
+                                    rate={review.rate}
+                                    textReview={review.textReview}
+                                    date={review.date}
+                                />
+                            ))}
+                        </div>
+                    </>)}
                 </div>
             </div>
             <div className="z-50 absolute -top-[4.5rem] left-0 w-full">

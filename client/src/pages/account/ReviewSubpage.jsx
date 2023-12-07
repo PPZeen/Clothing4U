@@ -43,7 +43,7 @@ export default function ReviewSubpage () {
                             <a href="/account/order">GO TO REVIEWS</a>
                         </div>
                     )}
-                    <div className="border-t w-4/5 max-md:w-[95%]">
+                    <div className="border-t w-4/5 max-md:w-[90%]">
                         {reviews.map(review => (
                             <div className="cursor-pointer" key={review._id} onClick={() => search(review.productId) }>
                                 <MyReviewCard

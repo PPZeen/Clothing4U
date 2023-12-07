@@ -32,40 +32,40 @@ export default function OrderSubpage () {
                         </div>
                     )}
                     {orders.map(order => (
-                        <div className="w-4/5 p-4 max-md:w-[95%]" key={order._id}>
+                        <div className="w-4/5 mt-5 px-2 max-md:px-1 max-md:w-[95%]" key={order._id}>
                             <div className="flex items-end gap-3">
-                                <h1 className="text-5xl font-medium">Order</h1>
-                                <h3 className="text-2xl font-light text-neutral-600">#{order._id.slice(5,12)}</h3>
+                                <h1 className="text-5xl max-lg:text-4xl max-md:text-3xl font-medium">Order</h1>
+                                <h4 className="text-2xl max-lg:text-xl max-md:text-lg font-light text-neutral-600">#{order._id.slice(5,12)}</h4>
                             </div>
-                            <div className="border border-neutral-300 mt-5 px-5 pb-5">
-                                <div className="mt-5 relative">
+                            <div className="border border-neutral-300 mt-5 max-md:mt-2 px-5 pb-5">
+                                <div className="mt-4 relative">
                                     <h2>
                                         <i className="uil uil-truck mr-2"></i>
                                         Shipping Information
                                     </h2>
                                     {order.shipmethod == "Standard Shipping" ? (<>
-                                        <h3 className="text-neutral-600 pl-8">{order.shipmethod}</h3>
-                                        <h3 className="text-neutral-600 pl-8">Estimated delivery in 4-7 working days.</h3>
+                                        <h3>{order.shipmethod}</h3>
+                                        <h3>Estimated delivery in 4-7 working days.</h3>
                                     </>) : (<>
-                                        <h3 className="text-neutral-600 pl-8">{order.shipmethod}</h3>
-                                        <h3 className="text-neutral-600 pl-8">Estimated delivery in 1-2 working days.</h3>
+                                        <h3>{order.shipmethod}</h3>
+                                        <h3>Estimated delivery in 1-2 working days.</h3>
 
                                     </>)}
-                                    <h3 className="absolute top-0 right-0 text-neutral-600">{order.date}</h3>
+                                    <h3 className="absolute top-1 right-0 text-neutral-600">{order.date}</h3>
                                 </div>
                                 <div className="mt-5">
                                     <h2>
                                         <i className="uil uil-credit-card mr-2"></i>
                                         Payment Method
                                     </h2>
-                                    <h3 className="text-neutral-600 pl-8">{order.paymethod}</h3>
+                                    <h3 className="">{order.paymethod}</h3>
                                 </div>
                                 <div className="mt-5">
                                     <h2>
                                         <i className="uil uil-location-point mr-2"></i>
                                         Shipping Address
                                     </h2>
-                                    <div className="text-neutral-600 pl-8">
+                                    <div>
                                         <h3>{order.firstname} {order.lastname}</h3>
                                         <h3>{order.phone}</h3>
                                         <h3>{order.address1} {order.address2}, {order.province}, {order.postcode} {order.country}</h3>
@@ -76,15 +76,14 @@ export default function OrderSubpage () {
                                         <i className="uil uil-shopping-cart mr-2"></i>
                                         Product Details
                                     </h2>
-                                    <div className="pl-8">
-                                        <ProductsOrder orderId={order._id} />
-                                    </div>
+                                    <ProductsOrder orderId={order._id} />
+
                                 </div>
                                 <div className="mt-5 flex flex-col gap-1">
                                     {order.amount == 1 ? (<>
-                                        <h3 className="text-lg text-neutral-600">1 item</h3>
+                                        <h5>1 item</h5>
                                     </>) : (<>
-                                        <h3 className="text-lg text-neutral-600">{order.amount} items</h3>
+                                        <h5>{order.amount} items</h5>
                                     </>)}
                                     <div className="total">
                                         <h1>Shipping Method</h1>
@@ -100,7 +99,7 @@ export default function OrderSubpage () {
                                     </div>
                                     <div className="total">
                                         <h1>Total</h1>
-                                        <div>THB {order.total}</div>
+                                        <h1>THB {order.total}</h1>
                                     </div>
                                 </div>
                             </div>

@@ -141,7 +141,7 @@ export default function CartModal ({showCart, setShowCart}) {
                                                 </div>
                                                 <div className="p-1 flex flex-col justify-between items-center">
                                                     <button className="bg-neutral-100 px-3 py-1 rounded-full text-red-600 text-sm font-medium" onClick={() => removeCart(cart._id)}>Remove</button>
-                                                    <h1 className="font-bold text-xl tracking-tighter">THB {cart.price}</h1>
+                                                    <h1 className="font-bold text-xl max-md:text-lg max-sm:text-base tracking-tighter">THB {cart.price}</h1>
                                                 </div>
                                             </div>
                                         ))}
@@ -154,7 +154,7 @@ export default function CartModal ({showCart, setShowCart}) {
                                         <div className="total">
                                             <h1>Shipping</h1>
                                             <div className="total gap-10">
-                                                <span className="border border-emerald-500 text-emerald-500 rounded-full px-2 text-base align-middle font-normal">Free Shipping</span>
+                                                <span className="border border-emerald-500 text-emerald-500 rounded-full px-2 py-1 text-base max-sm:text-xs flex justify-center font-normal">Free Shipping</span>
                                                 <h1>THB 0</h1>
                                             </div>
                                         </div>

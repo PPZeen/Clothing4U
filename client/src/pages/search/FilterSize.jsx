@@ -22,7 +22,7 @@ export default function FilterSize ({filter, updateFilter}) {
     }
 
     return (
-        <div className="mt-2">
+        <div className="mt-2 max-md:mt-0">
             <div className="title" onClick={showMore}>
                 <h2>Size</h2>
                 <i className="uil uil-angle-down text-xl" id={`filters-detail-size-show`} ></i>
