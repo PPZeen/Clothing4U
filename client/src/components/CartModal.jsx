@@ -176,7 +176,7 @@ export default function CartModal ({showCart, setShowCart}) {
                             
                             <div className="container-cart">
                                 <i className="uil uil-user-times text-5xl"></i>
-                                <h1 className="text-2xl my-8">Please, Login or register before shopping </h1>
+                                <h1 className="text-2xl my-8 text-center">Please, Login or register before shopping </h1>
                                 <a href="/login" className="primBtn bg-neutral-100 text-black">Login</a>
                                 <a href="/register" className="primBtn bg-neutral-100 text-black">Register</a>
                             </div>
