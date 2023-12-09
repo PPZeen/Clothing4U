@@ -108,20 +108,20 @@ export default function IndexPage() {
             
             <div className="mt-5 max-md:mt-1">
                 <h1 className="font-kanit py-5 max-md:py-2 text-3xl max-md:text-xl max-sm:text-lg">สินค้าพื้นฐาน</h1>
-                <div className="grid grid-cols-3 gap-4 w-full h-[36.5vw] aspect-[8/3] overflow-hidden">
-                    <div className="relative h-full">
+                <div className="w-full h-[33vw] flex justify-between">
+                    <div className="relative h-full w-[32.5%] black">
                         <img className="object-cover h-full" src={h6}/>
                         <div className="home-info-2">
                             <button onClick={() => search("kid")}>สินค้าเด็ก</button>
                         </div>
                     </div>
-                    <div className="relative h-full">
+                    <div className="relative h-full w-[32.5%] black">
                         <img className="object-cover h-full" src={h7}/>
                         <div className="home-info-2">
                             <button onClick={() => search("male")}>สินค้าผู้ชาย</button>
                         </div>
                     </div>
-                    <div className="relative h-full">
+                    <div className="relative h-full w-[32.5%] black">
                         <img className="object-cover h-full" src={h8}/>
                         <div className="home-info-2">
                             <button onClick={() => search("female")}>สินค้าผู้หญิง</button>

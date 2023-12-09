@@ -135,7 +135,7 @@ export default function ProductPage () {
                                     className="relative img w-[34vw] aspect-[8/9] max-md:w-[75%]"
                                 >
                                     {photos.map((photo, i) => (
-                                        <SwiperSlide className="w-full" key={`${photo}${i*i}${i}`}>
+                                        <SwiperSlide className="w-full flex justify-center" key={`${photo}${i*i}${i}`}>
                                             <Image className="object-cover h-full" src={photo} alt="img-pr"/>
                                         </SwiperSlide>
                                     ))}
