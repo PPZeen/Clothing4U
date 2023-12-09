@@ -33,7 +33,9 @@ export default function MyReviewCard ({cartId, owner, rate, textReview, date}) {
                     <h1 className="text-xl font-semibold">{owner}</h1>
                     <Star rate={rate} />
                     <h1 className="text-xl pb-1 break-words ...">{textReview}</h1>
-                    <ProductCard cart={cart} review={true} search={true} />
+                    <div className="w-full">
+                        <ProductCard cart={cart} review={true} search={true} />
+                    </div>
                     <h2 className="pt-1 font-medium text-neutral-400">{date}</h2>
                 </div>
             </div>
