@@ -29,13 +29,13 @@ export default function MyReviewCard ({cartId, owner, rate, textReview, date}) {
         {ready && (
             <div className="flex gap-4 py-3 border-b border-neutral-400">
                 <i className="uil uil-user-circle text-4xl"></i>
-                <div className="flex flex-col gap-2 products-order">
+                <div className="flex flex-col gap-2 products-order overflow-hidden">
                     <h1 className="text-xl font-semibold">{owner}</h1>
                     <Star rate={rate} />
-                    <h1 className="text-xl pb-1 break-words ...">{textReview}</h1>
-                    <div className="w-full">
-                        <ProductCard cart={cart} review={true} search={true} />
+                    <div className="w-[90%]">
+                        <h1 className="text-xl pb-1 break-words ...">{textReview}</h1>
                     </div>
+                    <ProductCard cart={cart} review={true} search={true} />
                     <h2 className="pt-1 font-medium text-neutral-400">{date}</h2>
                 </div>
             </div>
