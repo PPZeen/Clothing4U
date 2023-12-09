@@ -43,10 +43,12 @@ button.home-info-1 {
     @apply w-[10px] h-[10px]
 }
 /* --------------------- End swiper slider ---------------------*/
+div.home-info-2 {
+    @apply absolute bottom-0 left-0 w-full pb-8 pl-6 max-lg:pb-4 max-lg:pl-3 max-md:pb-2 max-md:pl-1
+}
 
-button.home-info-2 {
-    @apply absolute bottom-12 left-12 max-md:bottom-6 max-md:left-6 max-sm:bottom-2 max-sm:left-2 max-sm:px-3
-           px-4 py-3 max-md:py-2 bg-white font-normal rounded-full font-kanit hover:bg-neutral-300 max-sm:text-xs
+div.home-info-2 > button {
+    @apply max-sm:px-3 px-4 py-3 max-md:py-2 bg-white font-normal rounded-full font-kanit hover:bg-neutral-300 max-sm:text-xs
 }
 
 .ex-keyword > a {

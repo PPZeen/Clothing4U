@@ -108,18 +108,24 @@ export default function IndexPage() {
             
             <div className="mt-5 max-md:mt-1">
                 <h1 className="font-kanit py-5 max-md:py-2 text-3xl max-md:text-xl max-sm:text-lg">สินค้าพื้นฐาน</h1>
-                <div className="grid grid-cols-3 gap-4 h-[36.5vw] aspect-[8/3] overflow-hidden">
+                <div className="grid grid-cols-3 w-full gap-4 h-[36.5vw] aspect-[8/3] overflow-hidden">
                     <div className="relative">
                         <img className="object-cover h-full" src={h6}/>
-                        <button className="home-info-2" onClick={() => search("kid")}>สินค้าเด็ก</button>
+                        <div className="home-info-2">
+                            <button onClick={() => search("kid")}>สินค้าเด็ก</button>
+                        </div>
                     </div>
                     <div className="relative">
                         <img className="object-cover h-full" src={h7}/>
-                        <button className="home-info-2" onClick={() => search("male")}>สินค้าผู้ชาย</button>
+                        <div className="home-info-2">
+                            <button onClick={() => search("male")}>สินค้าผู้ชาย</button>
+                        </div>
                     </div>
                     <div className="relative">
                         <img className="object-cover h-full" src={h8}/>
-                        <button className="home-info-2" onClick={() => search("female")}>สินค้าผู้หญิง</button>
+                        <div className="home-info-2">
+                            <button onClick={() => search("female")}>สินค้าผู้หญิง</button>
+                        </div>
                     </div>
                 </div>
             </div>

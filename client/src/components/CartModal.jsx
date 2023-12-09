@@ -120,10 +120,10 @@ export default function CartModal ({showCart, setShowCart}) {
                                     <div className="my-5 border-y h-[76%] overflow-auto">
                                         {cartData.map(cart => (
                                             <div className="my-1 grid grid-cols-4 h-[29%] gap-1 border-b pb-2" key={cart._id}>
-                                                <div className="py-2">
-                                                    <Image className="h-full aspect-square object-cover" src={cart.photo}/>
+                                                <div className="h-full py-1 aspect-square">
+                                                    <Image className="h-full object-cover" src={cart.photo}/>
                                                 </div>
-                                                <div className="h-full ml-2 py-2 col-span-2 flex flex-col justify-between font-kanit tracking-tighter leading-tight drop-shadow-sm overflow-hidden">
+                                                <div className="ml-2 py-2 col-span-2 flex flex-col justify-between font-kanit tracking-tighter leading-tight drop-shadow-sm overflow-hidden">
                                                     <div>
                                                         <h1>{cart.title}</h1>
                                                         <h2 className="font-light text-neutral-400 leading-tight">size: {cart.gender} {cart.size.toUpperCase()}</h2>
