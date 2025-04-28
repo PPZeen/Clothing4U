@@ -3,4 +3,5 @@ api/node_modules
 api/.env
 api/uploads/*
 
+client/.env
 client/package-lock.json
