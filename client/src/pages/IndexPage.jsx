@@ -44,6 +44,7 @@ export default function IndexPage() {
                 pagination={true}
                 loop={true}
                 modules={[Navigation, Pagination, Autoplay, Keyboard]}
+                slidesPerView="auto"
             >
                 <SwiperSlide className="relative cursor-pointer" style={{ width: '97vw' }} onClick={() => search("kaws")}>
                     <img className="slider-img" src={h1} />
