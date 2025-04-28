@@ -29,7 +29,7 @@ export default function IndexPage() {
 
         <div className="home mt-1 mx-4 pb-5 overflow-x-hidden">
             <Swiper
-                className="relative h-[42vw] aspect-[7/3] bg-primary flex justify-center"
+                className="relative h-[42vw] bg-primary flex justify-center" /* aspect-[7/3] */
                 onInit={(swiper) => {
                     swiper.params.navigation.prevEl = prevRef.current;
                     swiper.params.navigation.nextEl = nextRef.current;
