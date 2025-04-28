@@ -26,7 +26,7 @@ export default function CardProduct ({product, search}) {
                 </div>
                 <h1 className="mt-2 max-md:mt-1 font-kanit font-medium text-neutral-800 text-2xl max-md:text-xl text-left">{product.title}</h1>
             </div>
-            <h1 className="mb-2 mt-5 max-md:mt-2 font-kanit font-bold text-3xl max-lg:text-xl">THB {product.price}</h1>
+            <h1 className="text-left mb-2 mt-5 max-md:mt-2 font-kanit font-bold text-3xl max-lg:text-xl">THB {product.price}</h1>
         </button>
     );
 }
