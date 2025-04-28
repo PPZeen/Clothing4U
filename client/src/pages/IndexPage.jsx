@@ -45,7 +45,7 @@ export default function IndexPage() {
                 loop={true}
                 modules={[Navigation, Pagination, Autoplay, Keyboard]}
             >
-                <SwiperSlide className="relative cursor-pointer" onClick={() => search("kaws")}>
+                <SwiperSlide className="relative cursor-pointer w-[97vw]" onClick={() => search("kaws")}>
                     <img className="slider-img" src={h1} />
                     <div className="slider-info">
                         <h1>KAWS ⨯ UT</h1>
@@ -53,7 +53,7 @@ export default function IndexPage() {
                         <button className="home-info-1" onClick={() => search("kaws")}>เพิ่มเติม</button>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className="relative cursor-pointer" onClick={() => search("roger")}>
+                <SwiperSlide className="relative cursor-pointer w-[97vw]" onClick={() => search("roger")}>
                     <img className="slider-img" src={h2} />
                     <div className="slider-info">
                         <h1>Roger Federer Collection</h1>
@@ -61,7 +61,7 @@ export default function IndexPage() {
                         <button className="home-info-1" onClick={() => search("roger")}>เพิ่มเติม</button>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className="relative cursor-pointer" onClick={() => search("smart")}>
+                <SwiperSlide className="relative cursor-pointer w-[97vw]" onClick={() => search("smart")}>
                     <img className="slider-img" src={h3} />
                     <div className="slider-info">
                         <h1>Smart Ankle Pants</h1>
@@ -69,7 +69,7 @@ export default function IndexPage() {
                         <button className="home-info-1" onClick={() => search("smart")}>เพิ่มเติม</button>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className="relative cursor-pointer" onClick={() => {search("heattech")}}>
+                <SwiperSlide className="relative cursor-pointer w-[97vw]" onClick={() => {search("heattech")}}>
                     <img className="slider-img" src={h4} />
                     <div className="slider-info">
                         <h1>Heattech Collection</h1>
